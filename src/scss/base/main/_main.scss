@@ -1,0 +1,61 @@
+@use 'base/variables' as var;
+@use 'base/mixins' as mx;
+
+$init: 1;
+$len: 6;
+
+.properties {
+  margin-top: 5rem;
+  &__heading {
+    @include mx.heading();
+  }
+  &__grid {
+    @include mx.grid(1, 2rem);
+    @include mx.media-tablet {
+      @include mx.grid(2, 2rem);
+    }
+    @include mx.media-desktop {
+      @include mx.grid(3, 2rem);
+    }
+  }
+  @include mx.media-tablet {
+    margin-top: 10rem;
+  }
+}
+
+.property {
+  background-color: var.$color_white;
+  @for $i from $init through $len {
+    $image: '../img/property/propiedad_' + $i + '.jpg';
+    &:nth-child(#{$i}) &__image-container {
+      @include mx.bg-image-property($image);
+    }
+  }
+  &__image-container {
+    aspect-ratio: 10 / 6;
+    background-size: auto 190%;
+    position: relative;
+    background-repeat: no-repeat;
+    @include mx.media-tablet {
+      background-size: auto 150%;
+    }
+  }
+  &__name {
+    position: absolute;
+    left: 1rem;
+    bottom: 1rem;
+    font-size: 2.4rem;
+    color: var.$color_white;
+  }
+  &__content {
+    padding: 2rem;
+  }
+  &__price {
+    font-size: 3rem;
+  }
+  &__link {
+    @include mx.button(var.$color_primary, var.$color_white);
+    text-transform: uppercase;
+    display: block;
+  }
+}

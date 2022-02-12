@@ -1,0 +1,27 @@
+@use 'base/variables' as var;
+@use 'base/mixins' as mx;
+
+.text-center {
+  text-align: center;
+}
+
+.bg-primary {
+  background-color: var.$color_primary;
+}
+
+.link-active {
+  color: red;
+}
+
+.line-divisor {
+  display: none;
+  height: 2.5rem;
+  border-right: 1px solid var.$color_gray_light;
+  @include mx.media-desktop {
+    display: block;
+  }
+}
+
+[class$="__heading"] {
+  margin: 2rem 0;
+}

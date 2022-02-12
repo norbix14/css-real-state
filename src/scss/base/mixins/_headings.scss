@@ -1,0 +1,26 @@
+@use 'base/variables' as var;
+
+@mixin heading($break: false) {
+  font-weight: 400;
+  span {
+    font-weight: 700;
+    text-transform: capitalize;
+    @if ($break) {
+      display: block;
+    }
+  }
+  &::after {
+    content: '';
+    display: block;
+    height: 1rem;
+    width: 15rem;
+    margin-top: 1rem;
+    background-image: linear-gradient(
+      to right,
+      var.$color_primary 0%,
+      var.$color_primary 50%,
+      lighten(var.$color_primary, 20%) 50%,
+      lighten(var.$color_primary, 20%) 100%
+    );
+  }
+}

@@ -1,0 +1,69 @@
+@use 'base/variables' as var;
+@use 'base/mixins' as mx;
+
+.notavif.notwebp .featured {
+  @include mx.bg-gradient-featured(to bottom, 'destacada.jpg');
+  @include mx.media-tablet {
+    @include mx.bg-gradient-featured(to right, 'destacada.jpg');
+  }
+}
+
+.webp .featured {
+  @include mx.bg-gradient-featured(to bottom, 'destacada.webp');
+  @include mx.media-tablet {
+    @include mx.bg-gradient-featured(to right, 'destacada.webp');
+  }
+}
+
+.avif .featured {
+  @include mx.bg-gradient-featured(to bottom, 'destacada.avif');
+  @include mx.media-tablet {
+    @include mx.bg-gradient-featured(to right, 'destacada.avif');
+  }
+}
+
+.featured {
+  margin-top: 5rem;
+  background-repeat: no-repeat;
+  background-size: 100%, cover;
+  background-position: center, -50rem -30rem;
+  &__grid {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    @include mx.media-tablet {
+      grid-template-rows: unset;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  &__content {
+    padding: 5rem;
+    grid-row: 2 / 3;
+    > * {
+      color: var.$color_white;
+    }
+    @include mx.media-tablet {
+      grid-column: 2 / 3;
+      padding: 10rem 5rem;
+    }
+  }
+  &__heading {
+    text-transform: uppercase;
+  }
+  &__text {
+    font-size: 1.8rem;
+  }
+  &__price {
+    font-size: 2.4rem;
+    font-weight: 700;
+  }
+  &__link {
+    @include mx.button(var.$color_white, var.$color_primary);
+    text-transform: uppercase;
+  }
+  @include mx.media-tablet {
+    background-position: 50%, -30rem;
+  }
+  @include mx.media-desktop {
+    background-position: 50%, -40rem;
+  }
+}

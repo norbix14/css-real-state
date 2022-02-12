@@ -1,0 +1,11 @@
+@use 'base/mixins' as mx;
+
+.feed {
+  margin-top: 5rem;
+  &__heading {
+    @include mx.heading(true);
+  }
+  @include mx.media-desktop {
+    @include mx.grid(3, 4rem);
+  }
+}

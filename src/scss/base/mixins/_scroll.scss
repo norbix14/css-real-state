@@ -1,0 +1,8 @@
+@mixin scroll-x($axe: x, $type: mandatory) {
+  overflow-y: hidden;
+  overflow-x: scroll;
+  scroll-snap-type: $axe $type;
+  > * {
+    scroll-snap-align: center;
+  }
+}

@@ -1,0 +1,39 @@
+@use 'base/variables' as var;
+
+@mixin bg-image($url, $degradate) {
+  background-image: linear-gradient($degradate 0%, $degradate 100%), url($url);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+}
+
+@mixin bg-gradient-header($position, $url) {
+  $path: '../img/page/' + $url;
+  background-image: linear-gradient(
+      $position,
+      transparentize(var.$color_primary, 0.2) 0%,
+      transparentize(var.$color_primary, 0.2) 100%
+    ),
+    url($path);
+}
+
+@mixin bg-image-property($url) {
+  background-image: linear-gradient(
+      to bottom,
+      transparentize(var.$color_black, 1%) 0%,
+      transparentize(var.$color_black, 0.3%) 100%
+    ),
+    url($url);
+}
+
+@mixin bg-gradient-featured($position, $url) {
+  $path: '../img/page/' + $url;
+  background-image: linear-gradient(
+      $position,
+      transparent 0%,
+      transparent 50%,
+      var.$color_primary 50%,
+      var.$color_primary 100%
+    ),
+    url($path);
+}

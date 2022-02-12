@@ -1,0 +1,68 @@
+@use 'base/variables' as var;
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: var.$font_primary;
+  background-color: darken(var.$color_gray_light, 3%);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+p {
+  font-size: 1.6rem;
+  line-height: 1.8;
+  margin: 0;
+  padding: 0;
+  color: var.$color_black;
+}
+
+a {
+  text-decoration: none;
+  color: var.$color_black;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+li {
+  list-style: none;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 4.4rem;
+  font-family: var.$font_secondary;
+}
+
+h2 {
+  font-size: 4rem;
+  font-family: var.$font_secondary;
+}
+
+h3 {
+  font-size: 3rem;
+}
